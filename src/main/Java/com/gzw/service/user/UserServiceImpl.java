@@ -1,65 +1,67 @@
 package com.gzw.service.user;
 
-import com.gzw.dao.BaseBao;
-import com.gzw.dao.user.UserDao;
-import com.gzw.dao.user.UserDaoImpl;
 import com.gzw.pojo.User;
-import org.junit.jupiter.api.Test;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import java.sql.Connection;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class UserServiceImpl implements UserService {
 
-    private UserDao userDao;
-
-    public UserServiceImpl() {
-        this.userDao = new UserDaoImpl();
-    }
-
-    // 业务层都会调用dao层，使用我们要引入模板
     @Override
     public User login(String userCode, String password) {
-        Connection connection = null;
-        User user = null;
-
-
+        // 读取配置文件mybatis/mybatis-config.xml
+        InputStream inputStream = null;
         try {
-            connection = BaseBao.getConnection();
-            user = userDao.getLoginUser(connection, userCode);
-        } catch (Exception e) {
+            inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml");
+        } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            BaseBao.closeResource(connection, null, null);
         }
+        // 通过配置文件构建SqlSessionFactory
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        // 通过SqlSessionFactory创建SqlSession
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        // 创建用于查询的User对象
+        User queryUser = new User();
+        queryUser.setUserCode(userCode);
+        queryUser.setUserPassword(password);
+        // 执行sql
+        User user = sqlSession.selectOne("mybatis.mapper.UserMapper.selectUser",queryUser);
+        // 提交并关闭sqlSession
+        sqlSession.commit();
+        sqlSession.close();
         return user;
     }
 
-
-    // 根据用户的id修改密码
     @Override
     public boolean updatePwd(int id, String password) {
-        Connection connection = null;
-        boolean flag = false;
-
+        // 读取配置文件mybatis/mybatis-config.xml
+        InputStream inputStream = null;
         try {
-            connection = BaseBao.getConnection();
-            if (userDao.updatePwd(connection,id,password)>0){
-                flag = true;
-            }
-        } catch (Exception e) {
+            inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml");
+        } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            BaseBao.closeResource(connection,null,null);
         }
-
-        return flag;
+        // 通过配置文件构建SqlSessionFactory
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        // 通过SqlSessionFactory创建SqlSession
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        // 创建用于查询的User对象
+        User queryUser = new User();
+        queryUser.setId(id);
+        queryUser.setUserPassword(password);
+        // 执行sql
+        try {
+            sqlSession.update("mybatis.mapper.UserMapper.updateUser",queryUser);
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        sqlSession.commit();
+        sqlSession.close();
+        return true;
     }
-
-    @Test
-    public void test(){
-        UserServiceImpl userService = new UserServiceImpl();
-        User admin = userService.login("wen","123456");
-        System.out.println(admin.getUserPassword());
-    }
-
 }

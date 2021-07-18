@@ -1,6 +1,7 @@
 package com.gzw.servlet.user;
 
 import com.gzw.pojo.User;
+import com.gzw.service.user.UserService;
 import com.gzw.service.user.UserServiceImpl;
 import com.gzw.util.Constants;
 
@@ -20,7 +21,7 @@ public class LoginServlet extends HttpServlet {
         String userPassword = req.getParameter("userPassword");
 
         //和数据库中的密码进行对比，调用业务层
-        UserServiceImpl userService = new UserServiceImpl();
+        UserService userService = new UserServiceImpl();
         User user = userService.login(userCode, userPassword);
 
         // 检测有没有此人
