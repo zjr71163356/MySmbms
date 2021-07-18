@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class UserServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String method = req.getParameter("method");
         if (method.equals("savepwd")&&method!=null){
             this.updatePwd(req,resp);
@@ -30,7 +30,7 @@ public class UserServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) { doGet(req, resp);
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException { doGet(req, resp);
     }
 
 
