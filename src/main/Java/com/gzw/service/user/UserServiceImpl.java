@@ -11,12 +11,14 @@ import java.io.InputStream;
 
 public class UserServiceImpl implements UserService {
 
+    private static final String resourcePath = "mybatis/mybatis-config.xml";
+
     @Override
     public User login(String userCode, String password) {
         // 读取配置文件mybatis/mybatis-config.xml
         InputStream inputStream = null;
         try {
-            inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml");
+            inputStream = Resources.getResourceAsStream(resourcePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,7 +43,7 @@ public class UserServiceImpl implements UserService {
         // 读取配置文件mybatis/mybatis-config.xml
         InputStream inputStream = null;
         try {
-            inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml");
+            inputStream = Resources.getResourceAsStream(resourcePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,5 +65,10 @@ public class UserServiceImpl implements UserService {
         sqlSession.commit();
         sqlSession.close();
         return true;
+    }
+
+    public static void main(String[] args) {
+        UserService userService = new UserServiceImpl();
+        userService.updatePwd(1,"123");
     }
 }
