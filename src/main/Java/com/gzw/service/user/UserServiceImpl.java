@@ -26,12 +26,15 @@ public class UserServiceImpl implements UserService {
         try {
             connection = BaseBao.getConnection();
             user = userDao.getLoginUser(connection, userCode);
+            if (user.getUserPassword().equals(password)){
+                return user;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             BaseBao.closeResource(connection, null, null);
         }
-        return user;
+        return null;
     }
 
 
