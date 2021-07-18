@@ -17,7 +17,6 @@ public class User {
     private Integer modifyBy;
     private Date modifyDate;
 
-    private Integer age;
     private String userRoleName;
 
 
@@ -28,7 +27,6 @@ public class User {
     }
 
     public void setAge(Integer age) {
-        this.age = age;
     }
 
     public String getUserRoleName() {
