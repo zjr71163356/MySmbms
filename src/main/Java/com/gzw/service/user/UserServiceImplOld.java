@@ -7,6 +7,7 @@ import com.gzw.pojo.User;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
+import java.util.List;
 
 @Deprecated
 public class UserServiceImplOld implements UserService {
@@ -54,6 +55,16 @@ public class UserServiceImplOld implements UserService {
         }
 
         return flag;
+    }
+
+    @Override
+    public int getUserCount(String userName, int userRole) {
+        return 0;
+    }
+
+    @Override
+    public List<User> getUserList(String queryUserName, int queryUserRole, int currentPageNo, int pageSize) {
+        return null;
     }
 
 }

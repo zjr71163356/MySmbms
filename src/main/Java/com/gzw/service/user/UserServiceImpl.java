@@ -1,16 +1,22 @@
 package com.gzw.service.user;
 
+import com.gzw.dao.BaseBao;
+import com.gzw.dao.user.UserDaoImpl;
 import com.gzw.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
+    UserDaoImpl userDao = new UserDaoImpl();
     private static final String resourcePath = "mybatis/mybatis-config.xml";
 
     @Override
@@ -67,8 +73,51 @@ public class UserServiceImpl implements UserService {
         return true;
     }
 
+    @Override
+    public int getUserCount(String userName, int userRole) {
+
+        Connection connection = null;
+        int userCount = 0;
+        try {
+            connection = BaseBao.getConnection();
+            userCount = userDao.getUserCount(connection, userName, userRole);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            BaseBao.closeResource(connection,null,null);
+        }
+        return userCount;
+    }
+
+    @Override
+    public List<User> getUserList(String queryUserName, int queryUserRole, int currentPageNo, int pageSize) {
+        Connection connection = null;
+        List<User> userList = null;
+        System.out.println("queryUserName ---- > " + queryUserName);
+        System.out.println("queryUserRole ---- > " + queryUserRole);
+        System.out.println("currentPageNo ---- > " + currentPageNo);
+        System.out.println("pageSize ---- > " + pageSize);
+        try {
+            connection = BaseBao.getConnection();
+            userList = userDao.getUserList(connection, queryUserName,queryUserRole,currentPageNo,pageSize);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally{
+            BaseBao.closeResource(connection, null, null);
+        }
+        return userList;
+    }
+
     public static void main(String[] args) {
         UserService userService = new UserServiceImpl();
         userService.updatePwd(1,"123");
+    }
+
+    @Test
+    public void test(){
+        UserServiceImpl userService = new UserServiceImpl();
+        int count = userService.getUserCount(null,1);
+        System.out.println(count);
     }
 }
