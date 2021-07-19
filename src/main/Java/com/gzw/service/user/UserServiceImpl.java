@@ -134,25 +134,30 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean registUser(String userCode, String userPassword) {
-        Connection connection=null;
-        ResultSet resultSet=null;
-        PreparedStatement preparedStatement=null;
-        Object [] params={userCode,userPassword};
-        String sql="insert into smbms_user values(?";
-        try {
-            connection = BaseBao.getConnection();
-            resultSet=BaseBao.execute(connection,preparedStatement,resultSet,sql,params);
-        }catch (Exception e)
-        {
-            e.printStackTrace();
-        }finally {
-            BaseBao.closeResource(connection,null,null);
-        }
-        if(resultSet==null)
-            return false;
-        else return true;
+    public boolean registUser(String userCode, String userPassword, Object[] params) {
+        return false;
     }
+
+    //    @Override
+//    public boolean registUser(String userCode, String userPassword)
+//        Connection connection=null;
+//        ResultSet resultSet=null;
+//        PreparedStatement preparedStatement=null;
+//        Object [] params={userCode,userPassword};
+//        String sql="insert into smbms_user values(?";
+//        try {
+//            connection = BaseBao.getConnection();
+//            resultSet=BaseBao.execute(connection,preparedStatement,resultSet,sql,params);
+//        }catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }finally {
+//            BaseBao.closeResource(connection,null,null);
+//        }
+//        if(resultSet==null)
+//            return false;
+//        else return true;
+//    }
 
     public static void main(String[] args) {
         UserService userService = new UserServiceImpl();
