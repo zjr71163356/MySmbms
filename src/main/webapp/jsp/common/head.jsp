@@ -28,7 +28,7 @@
 <!--主体内容-->
 <section class="publicMian ">
     <div class="left">
-        <h2 class="leftH2">功能列表</h2>
+        <h2 class="leftH2" style="background-color: #536B79; box-shadow: 2px 2px 2px 2px #035384;">功能列表</h2>
         <nav>
             <ul class="list">
                 <li ><a href="${pageContext.request.contextPath }/jsp/bill.do?method=query">订单管理</a></li>
