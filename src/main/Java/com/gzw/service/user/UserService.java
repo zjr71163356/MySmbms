@@ -20,6 +20,6 @@ public interface UserService {
 
     boolean checkUserCode(String userCode);
 
-    boolean registUser(String userCode, String userPassword);
+    boolean registUser(String userCode, String userPassword,Object[]params);
 
 }
