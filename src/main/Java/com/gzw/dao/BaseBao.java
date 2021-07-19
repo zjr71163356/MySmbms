@@ -44,7 +44,7 @@ public class BaseBao {
         return connection;
     }
     // 编写查询公共类
-    public static ResultSet execute(Connection connection, PreparedStatement preparedStatement,ResultSet resultSet, String sql, Object[] params) throws SQLException {
+    public static ResultSet execute(Connection connection, PreparedStatement preparedStatement, ResultSet resultSet, String sql, Object[] params) throws SQLException {
         // 预编译的sql语句
         preparedStatement = connection.prepareStatement(sql);
         for (int i = 0; i < params.length; i++) {

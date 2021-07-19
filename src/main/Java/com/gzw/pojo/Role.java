@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Role {
     private Integer id;
-    private String reloCode;
+    private String roleCode;
     private String roleName;
     private Integer createdBy;
     private Date creationDate;
@@ -20,12 +20,12 @@ public class Role {
         this.id = id;
     }
 
-    public String getReloCode() {
-        return reloCode;
+    public String getRoleCode() {
+        return roleCode;
     }
 
-    public void setReloCode(String reloCode) {
-        this.reloCode = reloCode;
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode;
     }
 
     public String getRoleName() {
