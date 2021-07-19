@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.UserMapper">
+    <!--查询用户-->
+    <!--TODO: where待完善-->
+    <select id="selectUser" parameterType="User" resultType="User">
+        select * from smbms_user
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="userCode != null">
+                AND userCode = #{userCode}
+            </if>
+            <if test="userName != null">
+                AND userName = #{userName}
+            </if>
+            <if test="userPassword != null">
+                AND userPassword = #{userPassword}
+            </if>
+        </where>
+    </select>
+    <!--更新用户信息-->
+    <!--TODO: set待完善-->
+    <update id="updateUser" parameterType="User">
+        update smbms_user
+        <set>
+            <if test="userName != null">userName = #{userName},</if>
+            <if test="userPassword != null">userPassword = #{userPassword}</if>
+        </set>
+        where id = #{id}
+    </update>
+    <!--删除用户信息-->
+    <!--TODO:待测试和完善-->
+    <delete id="deleteUser" parameterType="User">
+        delete from smbms_user
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="userCode != null">
+                AND userCode = #{userCode}
+            </if>
+            <if test="userName != null">
+                AND userName = #{userName}
+            </if>
+            <if test="userPassword != null">
+                AND userPassword = #{userPassword}
+            </if>
+        </where>
+    </delete>
+    <!--插入用户信息-->
+    <!--TODO:待测试和完善-->
+    <insert id="insertStudent" parameterType="User">
+        insert into smbms_user (id) values (#{id})
+    </insert>
+</mapper>
