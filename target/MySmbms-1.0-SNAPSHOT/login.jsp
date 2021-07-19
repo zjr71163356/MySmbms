@@ -20,7 +20,7 @@
             position: relative;
             height: 100vh;
             width: 100%;
-            background: #C6F1F8;
+            background: #7698AD;
         }
         .loginHeader {
             position: absolute;
@@ -58,7 +58,7 @@
             color: #DD7777;
         }
         #login-right:hover{
-            box-shadow: 2px 2px 2px 2px #85c8c8;
+            box-shadow: 2px 2px 2px 2px #536B79;
             border-radius: 15px;
         }
         #login-input {
@@ -81,14 +81,14 @@
         .input-common input {
             width: 70%;
             height: 30px;
-            background-color: #C6F1F8;
+            background-color: #7698AD;
             border: none;
             border-bottom: 3px solid #FFFFFF;
             padding: 0;
             outline: none;
             font-size: 25px;
             font-weight: bold;
-            -webkit-box-shadow: 0 0 0 1000px #C6F1F8 inset;
+            -webkit-box-shadow: 0 0 0 1000px #7698AD inset;
             color: #ffffff;
         }
         .subBtn {
@@ -111,7 +111,7 @@
             color: #FFFFFF;
         }
         .subBtn input:hover{
-            box-shadow: 0 2px 2px 2px #7dbcbc;
+            box-shadow: 0 2px 2px 2px #536B79;
             font-size: 20px;
         }
     </style>
