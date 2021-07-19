@@ -72,7 +72,7 @@ public class UserServlet extends HttpServlet {
         pageSupport.setPageSize(pageSize);
         pageSupport.setTotalCount(totalCount);
         // 控制首页和尾页
-        int totalPageCount = pageSupport.getTotalCount();
+        int totalPageCount = (int) (totalCount/pageSize + 1);
         if (currentPageNo<1){
             currentPageNo = 1;
         }else if (currentPageNo > totalPageCount){
@@ -90,6 +90,10 @@ public class UserServlet extends HttpServlet {
         req.setAttribute("roleList",roleList);
         req.setAttribute("totalCount",totalCount);
         req.setAttribute("currentPageNo",currentPageNo);
+        req.setAttribute("totalPageCount",totalPageCount);
+        req.setAttribute("queryUserName",queryNameInfo);
+        req.setAttribute("queryUserRole",queryUserRoleInfo);
+
 
         // 返回前端页面
         req.getRequestDispatcher("userlist.jsp").forward(req,resp);
