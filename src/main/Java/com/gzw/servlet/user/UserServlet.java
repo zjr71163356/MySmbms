@@ -57,7 +57,7 @@ public class UserServlet extends HttpServlet {
         if (queryNameInfo == null){
             queryNameInfo = "";
         }
-        if (queryUserRoleInfo != null && queryUserRoleInfo.equals("")){
+        if ("".equals(queryUserRoleInfo)){
             queryUserRole = Integer.parseInt(queryUserRoleInfo);
         }
         if (pageIndexInfo!=null){
