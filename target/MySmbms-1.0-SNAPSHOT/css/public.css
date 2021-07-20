@@ -595,6 +595,151 @@ li{
 
 /* 商品列表结束 */
 
+/* 用户添加 */
+
+#userAdd-box {
+    border: 2px solid #FFF3F8;
+    border-radius: 8px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    width: 30%;
+    transition: all .5s ease;
+    overflow: hidden;
+}
+
+#userAdd-box:hover{
+    box-shadow: 2px 2px 2px 2px #536B79;
+}
+#userAdd-box .user-common {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 70%;
+    color: #FFF3F8;
+    font-weight: 700;
+    font-size: 15px;
+}
+#userAdd-box .user-common input{
+    outline: none;
+    border: 2px solid #FFF3F8;
+    box-shadow: 0 0 0 0 #FFFFFF;
+    height: 20px;
+    border-radius: 5px;
+    color: #FFF3F8;
+    background-color: rgba(0,0,0,0);
+}
+#userAdd-box #uList-1 {
+    top: 8%;
+}#userAdd-box #uList-2 {
+     top: 16%;
+ }#userAdd-box #uList-3 {
+      top: 24%;
+  }#userAdd-box #uList-4 {
+       top: 32%;
+   }#userAdd-box #uList-5 {
+        top: 40%;
+    }#userAdd-box #uList-6 {
+         top: 48%;
+     }#userAdd-box #uList-7 {
+          top: 56%;
+      }#userAdd-box #uList-8{
+           top: 64%;
+       }#userAdd-box #uList-9{
+            top: 72%;
+        }#userAdd-box #uList-10{
+             top: 83%;
+             display: flex;
+             height: 40px;
+             justify-content: space-around;
+         }
+#uList-5 select {
+    height: 25px;
+    width: 55px;
+    text-align: center;
+    color: #7698AD;
+    font-weight: bold;
+    outline: none;
+}
+#uList-9 select {
+    height: 25px;
+    width: 55px;
+    text-align: center;
+    color: #7698AD;
+    font-weight: bold;
+    outline: none;
+}
+#uList-10 input {
+    width: 120px;
+    height: 100% !important;
+    line-height: 40px;
+}
+
+/* 用户添加结束 */
+
+
+/* 供应商添加 */
+#providerAdd-box {
+    height: 70%;
+    width: 30%;
+    border: 2px solid #FFF3F8;
+    border-radius: 10px;
+    transition: all .5s ease;
+}
+#providerAdd-box:hover {
+    box-shadow: 2px 2px 2px 2px #536B79;
+}
+.provider-common {
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%,0);
+    color: #FFF3F8;
+    font-weight: 700;
+    font-size: 15px;
+}
+.provider-common input {
+    outline: none;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,0);
+    border: 2px solid #FFF3F8;
+    height: 20px;
+    color: #FFF3F8;
+}
+#pList-1 {
+    top: 10%;
+}#pList-2{
+     top: 20%;
+ }#pList-3{
+      top: 30%;
+  }#pList-4{
+       top: 40%;
+   }#pList-5{
+        top: 50%;
+    }#pList-6{
+         top: 60%;
+     }#pList-7{
+          top: 70%;
+      }#pList-8{
+           top: 83%;
+           display: flex;
+           justify-content: space-between;
+           width: 60%;
+           height: 40px;
+       }
+#pList-8 input {
+    width: 100px;
+    height: 100%;
+}
+
+
+
+
+/* 供应商添加结束 */
+
+
 
 
 
