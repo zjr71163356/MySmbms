@@ -24,7 +24,7 @@ public class RegisterServlet extends HttpServlet {
         UserServiceImpl userService = new UserServiceImpl();
         HttpSession session = req.getSession();
 
-        if (userService.checkUserCode(userCode) == true || userCode != null) {
+        if (userService.checkUserCode(userCode) == true && userCode != null) {
 
             if (!userPassword.equals(userPassword2) || userPassword == null || userPassword2 == null)
                 session.setAttribute("message", "密码不一致或为空，请重新输入");

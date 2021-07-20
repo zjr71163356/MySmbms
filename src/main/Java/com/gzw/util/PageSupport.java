@@ -1,5 +1,9 @@
 package com.gzw.util;
 
+import com.gzw.service.user.UserServiceImpl;
+
+import java.util.List;
+
 public class PageSupport {
     //当前页码-来自于用户输入
     private int currentPageNo = 1;
@@ -61,6 +65,8 @@ public class PageSupport {
             this.totalPageCount = 0;
         }
     }
+
+        // 获取用户总数
 
 
 }

@@ -73,7 +73,7 @@ public class UserServiceImplOld implements UserService {
     }
 
     @Override
-    public boolean registUser(String userCode, String userPassword) {
+    public boolean registUser(String userCode, String userPassword,Object[]params) {
         return  false;
     }
 
