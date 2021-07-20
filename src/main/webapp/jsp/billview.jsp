@@ -6,7 +6,7 @@
          <strong>你现在所在的位置是:</strong>
          <span>订单管理页面 >> 信息查看</span>
      </div>
-     <div class="providerView">
+     <div class="providerView" id="view">
          <p><strong>订单编号：</strong><span>${bill.billCode }</span></p>
          <p><strong>商品名称：</strong><span>${bill.productName }</span></p>
          <p><strong>商品单位：</strong><span>${bill.productUnit }</span></p>
@@ -19,7 +19,7 @@
 				<c:if test="${bill.isPayment == 2}">已付款</c:if>
 			</span>
 		</p>
-		<div class="providerAddBtn">
+		<div class="providerAddBtn" id="view-button">
          	<input type="button" id="back" name="back" value="返回" >
         </div>
      </div>

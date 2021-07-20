@@ -6,7 +6,7 @@
             <strong>你现在所在的位置是:</strong>
             <span>用户管理页面 >> 用户信息查看页面</span>
         </div>
-        <div class="providerView">
+        <div class="providerView" id="view">
             <p><strong>用户编号：</strong><span>${user.userCode }</span></p>
             <p><strong>用户名称：</strong><span>${user.userName }</span></p>
             <p><strong>用户性别：</strong>
@@ -19,7 +19,7 @@
             <p><strong>用户电话：</strong><span>${user.phone }</span></p>
             <p><strong>用户地址：</strong><span>${user.address }</span></p>
             <p><strong>用户角色：</strong><span>${user.userRoleName}</span></p>
-			<div class="providerAddBtn">
+			<div class="providerAddBtn" id="view-button">
             	<input type="button" id="back" name="back" value="返回" >
             </div>
         </div>
