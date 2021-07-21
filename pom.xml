@@ -59,13 +59,26 @@
       <artifactId>mybatis</artifactId>
       <version>3.5.7</version>
     </dependency>
-
+    <!-- jstl-api -->
+    <dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>jstl-api</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <!-- jstl-impl -->
+    <dependency>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>jstl-impl</artifactId>
+      <version>1.2</version>
+    </dependency>
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
       <version>1.2.62</version>
     </dependency>
   </dependencies>
+
+
 
 
 </project>
