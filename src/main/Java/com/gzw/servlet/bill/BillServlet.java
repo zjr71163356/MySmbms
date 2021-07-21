@@ -4,6 +4,7 @@ import com.gzw.pojo.Bill;
 import com.gzw.pojo.Provider;
 import com.gzw.pojo.Role;
 import com.gzw.pojo.User;
+import com.gzw.service.bill.BillService;
 import com.gzw.service.bill.BillServiceImpl;
 import com.gzw.service.provider.ProviderService;
 import com.gzw.service.provider.ProviderServiceImpl;
@@ -11,6 +12,7 @@ import com.gzw.service.role.RoleServiceImpl;
 import com.gzw.service.user.UserServiceImpl;
 import com.gzw.util.PageSupport;
 import com.mysql.cj.util.StringUtils;
+import sun.util.resources.ext.CalendarData_da;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +31,35 @@ public class BillServlet extends HttpServlet {
         String method = req.getParameter("method");
         if (method.equals("query")&&method!=null){
             query(req,resp);
+        }else if (method.equals("add")&&method!=null){
+            add(req, resp);
         }
+    }
+
+    private void add(HttpServletRequest req, HttpServletResponse resp) {
+        /*
+            获取表单信息
+            billCode
+            productName
+            productUnit
+            productCount
+            totalPrice
+            providerId
+            isPayment
+        */
+        // 创建Bill对象
+        Bill bill = new Bill();
+        BillServiceImpl billService = new BillServiceImpl();
+        // 获取表单信息
+        String billCode = req.getParameter("billCode");
+        String productName = req.getParameter("productName");
+        String productUnit = req.getParameter("productUnit");
+        String productCount = req.getParameter("productCount");
+        String totalPrice = req.getParameter("totalPrice");
+        String providerId = req.getParameter("providerId");
+        String isPayment = req.getParameter("isPayment");
+
+
     }
 
 
