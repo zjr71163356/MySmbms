@@ -40,6 +40,7 @@
             <div class="bill-common" id="list-6">
                 <label >供应商：</label>
                 <select name="providerId" id="providerId">
+
                 </select>
                 <font color="red"></font>
             </div>

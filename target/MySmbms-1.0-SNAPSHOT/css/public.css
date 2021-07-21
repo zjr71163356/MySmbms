@@ -767,5 +767,65 @@ li{
 }
 /* view结束 */
 
+/* 删除框 */
+.zhezhao{
+    height: 50px;
+    width: 100%;
+    background-color: #536B79;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #FFF3F8;
+}
+.remove {
+    width: 50%;
+    height: 100%;
+    color: #FFF3F8;
+}
+.remove a{
+    display: inline-block;
+    height: 25px;
+    color: #FFF3F8;
+    border: 1px solid #FFF3F8;
+    border-radius: 3px;
+    line-height: 25px;
+    text-align: center;
+    overflow: hidden;
+    width: 60px;
+    transition: all .5s ease;
+}
+.removerChid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.removerChid h2 {
+    padding: 0 10px;
+}
+.removeMain {
+    display: flex;
+    line-height: 25px;
+    background-color: #536B79;
+    height: 25px;
+}
+.removeMain p{
+    color: #780000;
+}
+.remove a{
+    margin-left: 10px;
+}
+.remove  #yes:hover {
+    font-size: 15px;
+    color: #900000;
+}
+.remove #no:hover{
+    font-size: 15px;
+    color: #3D4F1B;
+}
+
+
+
+/* 删除框结束 */
 
 

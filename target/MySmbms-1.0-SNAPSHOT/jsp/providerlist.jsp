@@ -20,6 +20,20 @@
 				<a href="${pageContext.request.contextPath }/jsp/provideradd.jsp">添加供应商</a>
 			</form>
         </div>
+	<!--点击删除按钮后弹出的页面-->
+	<div class="zhezhao" style="display: none">
+		<div class="remove" id="removeProv">
+			<div class="removerChid">
+				<h2>提示</h2>
+				<div class="removeMain" >
+					<p>你确定要删除该供应商吗？</p>
+					<a href="#" id="yes">确定</a>
+					<a href="#" id="no">取消</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
         <!--供应商操作表格-->
         <table class="providerTable" cellpadding="0" cellspacing="0">
             <tr class="firstTr">
@@ -61,22 +75,8 @@
 				</tr>
 			</c:forEach>
         </table>
-
-    </div>
 </section>
 
-<!--点击删除按钮后弹出的页面-->
-<div class="zhezhao"></div>
-<div class="remove" id="removeProv">
-   <div class="removerChid">
-       <h2>提示</h2>
-       <div class="removeMain" >
-           <p>你确定要删除该供应商吗？</p>
-           <a href="#" id="yes">确定</a>
-           <a href="#" id="no">取消</a>
-       </div>
-   </div>
-</div>
 
 <%@include file="/jsp/common/foot.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/providerlist.js"></script>
