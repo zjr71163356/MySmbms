@@ -50,21 +50,27 @@ public class ProviderServlet extends HttpServlet {
         if(!StringUtils.isNullOrEmpty(proid)) {
             ProviderServiceImpl providerService = new ProviderServiceImpl();
         int flag=providerService.deleteProviderById(proid);
-        if(flag!=0)
+        if(flag==0)
         {
             resultMap.put("delResult","true");
         }
         else
-            resultMap.put("delResult","false");
+        {
+            resultMap.put("delResult",Integer.toString(flag));
         }
-        else{
-        resultMap.put("delResult", "notexit");
-        resp.setContentType("application/json");
+
+        }
+        else
+        {
+            resultMap.put("delResult", "notexit");
+        }
+
+            resp.setContentType("application/json");
             PrintWriter out=resp.getWriter();
             out.write(JSONArray.toJSONString(resultMap));
             out.flush();
             out.close();
-    }
+
 
 
     }
