@@ -1,15 +1,20 @@
 package com.gzw.servlet.provider;
 
+import com.alibaba.fastjson.JSONArray;
 import com.gzw.pojo.Provider;
 import com.gzw.service.provider.ProviderServiceImpl;
+import com.mysql.cj.util.StringUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ProviderServlet extends HttpServlet {
     @Override
@@ -38,16 +43,30 @@ public class ProviderServlet extends HttpServlet {
         else  req.setAttribute("message","添加失败请重试");
         req.getRequestDispatcher("provideradd.jsp").forward(req,resp);
     }
-    private boolean delete(HttpServletRequest req, HttpServletResponse resp) throws  ServletException ,IOException
+    private void delete(HttpServletRequest req, HttpServletResponse resp) throws  ServletException ,IOException
     {
-
-        List<Provider >providers=query(req,resp);
-        Provider provider= providers.get(0);
-        ProviderServiceImpl providerService = new ProviderServiceImpl();
-        int flag=providerService.deleteProviderById( provider.getId().toString());
+        String proid = req.getParameter("proid");
+        HashMap<String,String > resultMap=new HashMap<>();
+        if(!StringUtils.isNullOrEmpty(proid)) {
+            ProviderServiceImpl providerService = new ProviderServiceImpl();
+        int flag=providerService.deleteProviderById(proid);
         if(flag!=0)
-            return true;
-        else return  false;
+        {
+            resultMap.put("delResult","true");
+        }
+        else
+            resultMap.put("delResult","false");
+        }
+        else{
+        resultMap.put("delResult", "notexit");
+        resp.setContentType("application/json");
+            PrintWriter out=resp.getWriter();
+            out.write(JSONArray.toJSONString(resultMap));
+            out.flush();
+            out.close();
+    }
+
+
     }
 
     private  List<Provider> query(HttpServletRequest req, HttpServletResponse resp)throws ServletException,IOException {
