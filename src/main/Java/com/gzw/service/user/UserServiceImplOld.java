@@ -63,8 +63,18 @@ public class UserServiceImplOld implements UserService {
     }
 
     @Override
+    public boolean checkUserCode(String userCode) {
+        return false;
+    }
+
+    @Override
     public List<User> getUserList(String queryUserName, int queryUserRole, int currentPageNo, int pageSize) {
         return null;
+    }
+
+    @Override
+    public boolean registUser(String userCode, String userPassword, Object[] params) {
+        return false;
     }
 
 }

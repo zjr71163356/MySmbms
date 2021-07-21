@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
@@ -107,6 +109,49 @@ public class UserServiceImpl implements UserService {
             BaseBao.closeResource(connection, null, null);
         }
         return userList;
+    }
+
+    @Override
+    public boolean checkUserCode(String userCode) {
+        Connection connection=null;
+        ResultSet resultSet=null;
+        PreparedStatement preparedStatement=null;
+        Object [] params={userCode};
+        String sql="select id from smbms_user where userCode =?";
+        try {
+            connection = BaseBao.getConnection();
+            resultSet=BaseBao.execute(connection,preparedStatement,resultSet,sql,params);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }finally {
+            BaseBao.closeResource(connection,null,null);
+        }
+        if(resultSet==null)
+            return false;
+        else return true;
+
+    }
+
+    @Override
+    public boolean registUser(String userCode, String userPassword,Object[]params) {
+        Connection connection=null;
+        int flag=0;
+        PreparedStatement preparedStatement=null;
+
+        String sql="insert into smbms_user values(null,"+userCode+",?,"+userPassword+",?,?,?,?,?,?,?,null,null)";
+        try {
+            connection = BaseBao.getConnection();
+            flag=BaseBao.execute(connection,sql,params,preparedStatement);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }finally {
+            BaseBao.closeResource(connection,null,null);
+        }
+        if(flag==0)
+            return false;
+        else return true;
     }
 
     public static void main(String[] args) {
