@@ -34,7 +34,7 @@ public class BillDaoImpl implements BillDao {
         List<Bill> billList = new ArrayList<Bill>();
         if (connection!=null){
             StringBuffer sql = new StringBuffer();
-            sql.append("select b.*,p.proName productName from smbms_bill b, smbms_provider p where b.providerId = p.id");
+            sql.append("select b.*,p.proName providerName from smbms_bill b, smbms_provider p where b.providerId = p.id");
             List<Object> list = new ArrayList<Object>();
             if (!StringUtils.isNullOrEmpty(bill.getProductName())){
                 sql.append(" and productName like ?");
@@ -61,6 +61,7 @@ public class BillDaoImpl implements BillDao {
                 _bill.setTotalPrice(resultSet.getBigDecimal("totalPrice"));
                 _bill.setIsPayment(resultSet.getInt("isPayment"));
                 _bill.setProviderId(resultSet.getInt("providerId"));
+                _bill.setProviderName(resultSet.getString("providerName"));
                 _bill.setCreationDate(resultSet.getTimestamp("creationDate"));
                 _bill.setCreatedBy(resultSet.getInt("createdBy"));
                 billList.add(_bill);

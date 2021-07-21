@@ -47,31 +47,31 @@
               <th width="30%">操作</th>
           </tr>
           <c:forEach var="bill" items="${billList }" varStatus="status">
-				<tr>
+				<tr class="search-form">
 					<td>
-					<span>${bill.billCode }</span>
+					<span style="width: 15%">${bill.billCode }</span>
 					</td>
 					<td>
-					<span>${bill.productName }</span>
+					<span style="width: 15%">${bill.productName }</span>
 					</td>
 					<td>
-					<span>${bill.providerName}</span>
+					<span style="width: 25%">${bill.providerName}</span>
 					</td>
 					<td>
-					<span>${bill.totalPrice}</span>
+					<span style="width: 10%">${bill.totalPrice}</span>
 					</td>
 					<td>
-					<span>
+					<span style="width: 10%">
 						<c:if test="${bill.isPayment == 1}">未付款</c:if>
 						<c:if test="${bill.isPayment == 2}">已付款</c:if>
 					</span>
 					</td>
 					<td>
-					<span>
+					<span style="width: 10%">
 					<fmt:formatDate value="${bill.creationDate}" pattern="yyyy-MM-dd"/>
 					</span>
 					</td>
-					<td>
+					<td style="width: 15%">
 					<span><a class="viewBill" href="javascript:;" billid=${bill.id } billcc=${bill.billCode }><img src="${pageContext.request.contextPath }/images/read.png" alt="查看" title="查看"/></a></span>
 					<span><a class="modifyBill" href="javascript:;" billid=${bill.id } billcc=${bill.billCode }><img src="${pageContext.request.contextPath }/images/xiugai.png" alt="修改" title="修改"/></a></span>
 					<span><a class="deleteBill" href="javascript:;" billid=${bill.id } billcc=${bill.billCode }><img src="${pageContext.request.contextPath }/images/schu.png" alt="删除" title="删除"/></a></span>
