@@ -13,39 +13,39 @@
               <input type="hidden" name="method" value="modifysave">
               <div class="provider-common" id="pList-1">
                   <label for="proCode">供应商编码：</label>
-                  <input type="text" name="proCode" id="proCode" value="${provider.proCode }" readonly="readonly"> 
+                  <input type="text" name="paras" id="proCode" value="${provider.proCode }" readonly="readonly">
               </div>
               <div class="provider-common" id="pList-2">
                   <label for="proName">供应商名称：</label>
-                 <input type="text" name="proName" id="proName" value="${provider.proName }"> 
+                 <input type="text" name="paras" id="proName" value="${provider.proName }">
 			<font color="red"></font>
               </div>
               
               <div class="provider-common" id="pList-3">
                   <label for="proContact">联系人：</label>
-                  <input type="text" name="proContact" id="proContact" value="${provider.proContact }"> 
+                  <input type="text" name="paras" id="proContact" value="${provider.proContact }">
 			<font color="red"></font>
               </div>
               
               <div class="provider-common" id="pList-4">
                   <label for="proPhone">联系电话：</label>
-                  <input type="text" name="proPhone" id="proPhone" value="${provider.proPhone }"> 
+                  <input type="text" name="paras" id="proPhone" value="${provider.proPhone }">
 			<font color="red"></font>
               </div>
               
               <div class="provider-common" id="pList-5">
                   <label for="proAddress">联系地址：</label>
-                  <input type="text" name="proAddress" id="proAddress" value="${provider.proAddress }"> 
+                  <input type="text" name="paras" id="proAddress" value="${provider.proAddress }">
               </div>
               
               <div class="provider-common" id="pList-6">
                   <label for="proFax">传真：</label>
-                  <input type="text" name="proFax" id="proFax" value="${provider.proFax }">
+                  <input type="text" name="paras" id="proFax" value="${provider.proFax }">
               </div>
               
               <div class="provider-common" id="pList-7">
                   <label for="proDesc">描述：</label>
-                  <input type="text" name="proDesc" id="proDesc" value="${provider.proDesc }"> 
+                  <input type="text" name="paras" id="proDesc" value="${provider.proDesc }">
               </div>
               <div class="providerAddBtn provider-common" id="pList-8">
                   <input type="button" name="save" id="save" value="保存">
