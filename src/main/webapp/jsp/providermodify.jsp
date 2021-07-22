@@ -9,7 +9,8 @@
       </div>
       <div class="providerAdd" id="providerAdd-box">
           <form id="providerForm" name="providerForm" method="post" action="${pageContext.request.contextPath }/jsp/provider.do">
-              <!--div的class 为error是验证错误，ok是验证成功-->
+              <input type="hidden" name="method" value="modifysave">
+              <input type="hidden" name="id" value="${provider.id }">
               <div class="provider-common" id="pList-1">
                   <label for="proCode">供应商编码：</label>
                   <input type="text" name="proCode" id="proCode" value="${provider.proCode }" readonly="readonly"> 
