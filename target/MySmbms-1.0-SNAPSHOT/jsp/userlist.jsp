@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
 <div class="right">
 	<div class="location">
@@ -27,19 +27,6 @@
 			<input	value="查 询" type="submit" id="searchbutton">
 			<a href="${pageContext.request.contextPath}/jsp/useradd.jsp" id="search-add">添加用户</a>
 		</form>
-	</div>
-	<!--点击删除按钮后弹出的页面-->
-	<div class="zhezhao" style="display: none">
-		<div class="remove" id="removeUse">
-			<div class="removerChid">
-				<h2>提示</h2>
-				<div class="removeMain">
-					<p>你确定要删除该用户吗？</p>
-					<a href="#" id="yes">确定</a>
-					<a href="#" id="no">取消</a>
-				</div>
-			</div>
-		</div>
 	</div>
 	<!--用户-->
 	<table class="providerTable" cellpadding="0" cellspacing="0">
@@ -92,6 +79,19 @@
 	</c:import>
 </div>
 </section>
+
+<!--点击删除按钮后弹出的页面-->
+<div class="zhezhao"></div>
+<div class="remove" id="removeUse">
+	<div class="removerChid">
+		<h2>提示</h2>
+		<div class="removeMain">
+			<p>你确定要删除该用户吗？</p>
+			<a href="#" id="yes">确定</a>
+			<a href="#" id="no">取消</a>
+		</div>
+	</div>
+</div>
 
 <%@include file="/jsp/common/foot.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/userlist.js"></script>

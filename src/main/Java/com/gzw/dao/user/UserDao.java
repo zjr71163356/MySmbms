@@ -30,4 +30,5 @@ public interface UserDao {
 
     // 修改user
     public int modify(Connection connection, User user)throws Exception;
+
 }

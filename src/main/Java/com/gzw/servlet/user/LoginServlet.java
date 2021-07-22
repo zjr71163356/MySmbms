@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
         if (user!=null){
             // 将用户的信息放到session中
             req.getSession().setAttribute(Constants.USER_SESSION,user);
+            req.getSession().setAttribute("userId",user.getId());
             // 跳转到网站内部
             resp.sendRedirect("jsp/frame.jsp");
         }else{

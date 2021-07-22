@@ -1,6 +1,8 @@
 package com.gzw.pojo;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 public class Provider {
@@ -16,7 +18,24 @@ public class Provider {
     private Date creationDate;
     private Date modifyDate;
     private Integer modifyBy;
+    public void setProvider(Object []obj, HttpServletRequest req, HttpServletResponse resp)
+    {
+        Provider provider = new Provider();
+        provider.setId(null);
+        provider.setProCode((String)obj[0]);
+        provider.setProName((String)obj[1]);
+        provider.setProDesc((String)obj[2]);
+        provider.setProContact((String)obj[3]);
+        provider.setProPhone((String)obj[4]);
+        provider.setProAddress((String)obj[5]);
+        provider.setProFax((String)obj[6]);
+        provider.setCreatedBy((Integer) req.getSession().getAttribute("userID"));
+        provider.setCreationDate(new Date());
+        provider.setModifyDate(new Date());
+        provider.setModifyBy((Integer) req.getSession().getAttribute("userID"));
 
+
+    }
     public Integer getId() {
         return id;
     }
