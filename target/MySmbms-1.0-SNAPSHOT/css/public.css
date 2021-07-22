@@ -792,6 +792,7 @@ li{
     text-align: center;
     overflow: hidden;
     width: 60px;
+    padding: 10px auto;
     transition: all .5s ease;
 }
 .removerChid {
@@ -807,6 +808,7 @@ li{
     display: flex;
     line-height: 25px;
     background-color: #536B79;
+    width: 300px;
     height: 25px;
 }
 .removeMain p{

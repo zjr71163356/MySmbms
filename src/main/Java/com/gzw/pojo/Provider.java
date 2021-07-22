@@ -1,6 +1,8 @@
 package com.gzw.pojo;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 public class Provider {
@@ -111,5 +113,8 @@ public class Provider {
 
     public void setModifyBy(Integer modifyBy) {
         this.modifyBy = modifyBy;
+    }
+
+    public void setProvider(Object[] paras, HttpServletRequest req, HttpServletResponse resp) {
     }
 }
