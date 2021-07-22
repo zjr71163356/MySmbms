@@ -45,7 +45,7 @@
 			<th width="30%">操作</th>
 		</tr>
 		<c:forEach var="provider" items="${providerList }" varStatus="status">
-			<tr>
+			<tr class="search-form">
 				<td>
 					<span>${provider.proCode }</span>
 				</td>
