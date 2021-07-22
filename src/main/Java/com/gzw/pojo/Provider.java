@@ -20,19 +20,19 @@ public class Provider {
     private Integer modifyBy;
     public void setProvider(Object []obj, HttpServletRequest req, HttpServletResponse resp)
     {
-        Provider provider = new Provider();
-        provider.setId(null);
-        provider.setProCode((String)obj[0]);
-        provider.setProName((String)obj[1]);
-        provider.setProDesc((String)obj[2]);
-        provider.setProContact((String)obj[3]);
-        provider.setProPhone((String)obj[4]);
-        provider.setProAddress((String)obj[5]);
-        provider.setProFax((String)obj[6]);
-        provider.setCreatedBy((Integer) req.getSession().getAttribute("userID"));
-        provider.setCreationDate(new Date());
-        provider.setModifyDate(new Date());
-        provider.setModifyBy((Integer) req.getSession().getAttribute("userID"));
+
+        this.setId(null);
+        this.setProCode((String)obj[0]);
+        this.setProName((String)obj[1]);
+        this.setProDesc((String)obj[2]);
+        this.setProContact((String)obj[3]);
+        this.setProPhone((String)obj[4]);
+        this.setProAddress((String)obj[5]);
+        this.setProFax((String)obj[6]);
+        this.setCreatedBy((Integer) req.getSession().getAttribute("userID"));
+        this.setCreationDate(new Date());
+        this.setModifyDate(new Date());
+        this.setModifyBy((Integer) req.getSession().getAttribute("userID"));
 
 
     }
