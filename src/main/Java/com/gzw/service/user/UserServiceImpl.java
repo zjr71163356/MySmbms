@@ -19,6 +19,98 @@ public class UserServiceImpl implements UserService {
     UserDaoImpl userDao = new UserDaoImpl();
     private static final String resourcePath = "mybatis/mybatis-config.xml";
 
+
+    @Override
+    public boolean add(User user) {
+        boolean flag = false;
+        Connection connection = null;
+        try {
+            connection = BaseBao.getConnection();
+            connection.setAutoCommit(false);//开启JDBC事务管理
+            int updateRows = userDao.add(connection,user);
+            connection.commit();
+            if(updateRows > 0){
+                flag = true;
+                System.out.println("add success!");
+            }else{
+                System.out.println("add failed!");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                connection.rollback();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }finally{
+            //在service层进行connection连接的关闭
+            BaseBao.closeResource(connection, null, null);
+        }
+        return flag;
+    }
+
+    @Override
+    public User selectUserCodeExist(String userCode) {
+        Connection connection = null;
+        User user = null;
+        try {
+            connection = BaseBao.getConnection();
+            user = userDao.getLoginUser(connection, userCode);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            BaseBao.closeResource(connection, null, null);
+        }
+        return user;
+    }
+
+    @Override
+    public boolean deleteUserById(Integer delId) {
+        Connection connection = null;
+        boolean flag = false;
+        try {
+            connection = BaseBao.getConnection();
+            if(userDao.deleteUserById(connection,delId) > 0)
+                flag = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            BaseBao.closeResource(connection, null, null);
+        }
+        return flag;
+    }
+    @Override
+    public User getUserById(String id) {
+        User user = null;
+        Connection connection = null;
+        try{
+            connection = BaseBao.getConnection();
+            user = userDao.getUserById(connection,id);
+        }catch (Exception e) {
+            e.printStackTrace();
+            user = null;
+        }finally{
+            BaseBao.closeResource(connection, null, null);
+        }
+        return user;
+    }
+    @Override
+    public boolean modify(User user) {
+        Connection connection = null;
+        boolean flag = false;
+        try {
+            connection = BaseBao.getConnection();
+            if(userDao.modify(connection,user) > 0)
+                flag = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            BaseBao.closeResource(connection, null, null);
+        }
+        return flag;
+    }
+
     @Override
     public User login(String userCode, String password) {
         // 读取配置文件mybatis/mybatis-config.xml
@@ -93,15 +185,10 @@ public class UserServiceImpl implements UserService {
     public List<User> getUserList(String queryUserName, int queryUserRole, int currentPageNo, int pageSize) {
         Connection connection = null;
         List<User> userList = null;
-        System.out.println("queryUserName ---- > " + queryUserName);
-        System.out.println("queryUserRole ---- > " + queryUserRole);
-        System.out.println("currentPageNo ---- > " + currentPageNo);
-        System.out.println("pageSize ---- > " + pageSize);
         try {
             connection = BaseBao.getConnection();
             userList = userDao.getUserList(connection, queryUserName,queryUserRole,currentPageNo,pageSize);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }finally{
             BaseBao.closeResource(connection, null, null);
