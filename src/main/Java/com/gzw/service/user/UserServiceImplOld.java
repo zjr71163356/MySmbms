@@ -20,6 +20,11 @@ public class UserServiceImplOld implements UserService {
         this.userDao = new UserDaoImpl();
     }
 
+    @Override
+    public boolean registUser(String userCode, String userPassword, Object[] params) {
+        return false;
+    }
+
     // 业务层都会调用dao层，使用我们要引入模板
     @Override
     public User login(String userCode, String password) {
@@ -91,6 +96,11 @@ public class UserServiceImplOld implements UserService {
 
     @Override
     public boolean add(User user) {
+        return false;
+    }
+
+    @Override
+    public boolean checkUserCode(String userCode) {
         return false;
     }
 

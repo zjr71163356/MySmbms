@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.util.List;
 
 public interface UserService {
+    public boolean registUser(String userCode, String userPassword,Object[]params);
+
     // 用户登录
     public User login(String userCode, String password);
 
@@ -32,4 +34,8 @@ public interface UserService {
 
     // 新增user
     public boolean add(User user);
+
+    public boolean checkUserCode(String userCode);
+
+
 }
