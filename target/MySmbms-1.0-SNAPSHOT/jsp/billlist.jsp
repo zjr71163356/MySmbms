@@ -34,6 +34,19 @@
 			<input	value="查 询" type="submit" id="searchbutton">
 			<a href="${pageContext.request.contextPath }/jsp/billadd.jsp">添加订单</a>
 		</form>
+       </div>
+	<!--点击删除按钮后弹出的页面-->
+	<div class="zhezhao" style="display: none">
+		<div class="remove" id="removeBi">
+			<div class="removerChid">
+				<h2>提示</h2>
+				<div class="removeMain">
+					<p>你确定要删除该订单吗？</p>
+					<a href="#" id="yes">确定</a>
+					<a href="#" id="no">取消</a>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!--账单表格 样式和供应商公用-->
 	<table class="providerTable" cellpadding="0" cellspacing="0">
@@ -83,17 +96,7 @@
 </section>
 
 <!--点击删除按钮后弹出的页面-->
-<div class="zhezhao"></div>
-<div class="remove" id="removeBi">
-	<div class="removerChid">
-		<h2>提示</h2>
-		<div class="removeMain">
-			<p>你确定要删除该订单吗？</p>
-			<a href="#" id="yes">确定</a>
-			<a href="#" id="no">取消</a>
-		</div>
-	</div>
-</div>
+
 
 <%@include file="/jsp/common/foot.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/billlist.js"></script>

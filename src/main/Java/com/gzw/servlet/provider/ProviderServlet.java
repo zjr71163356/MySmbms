@@ -31,7 +31,7 @@ public class ProviderServlet extends HttpServlet {
     }
 
     private void modify(HttpServletRequest req, HttpServletResponse resp) {
-
+        Object[] parameterValues = req.getParameterValues("paras");
     }
 
     private void add(HttpServletRequest req, HttpServletResponse resp) throws  ServletException ,IOException{
@@ -51,7 +51,7 @@ public class ProviderServlet extends HttpServlet {
     private void delete(HttpServletRequest req, HttpServletResponse resp) throws  ServletException ,IOException
     {
         String proid = req.getParameter("proid");
-        HashMap<String,String > resultMap=new HashMap<>();
+        HashMap<String,String > resultMap=new HashMap<String, String>();
         if(!StringUtils.isNullOrEmpty(proid)) {
             ProviderServiceImpl providerService = new ProviderServiceImpl();
         int flag=providerService.deleteProviderById(proid);

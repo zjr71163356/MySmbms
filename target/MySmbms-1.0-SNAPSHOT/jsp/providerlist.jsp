@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
 
 <div class="right">
@@ -12,10 +12,10 @@
 				<input name="method" value="query" type="hidden">
 				<span>供应商编码：</span>
 				<input name="queryProCode" type="text" value="${queryProCode }">
-				
+
 				<span>供应商名称：</span>
 				<input name="queryProName" type="text" value="${queryProName }">
-				
+
 				<input value="查 询" type="submit" id="searchbutton">
 				<a href="${pageContext.request.contextPath }/jsp/provideradd.jsp">添加供应商</a>
 			</form>
@@ -74,8 +74,9 @@
 			</tr>
 		</c:forEach>
 	</table>
-	</section>
+
 </div>
+</section>
 
 
 <%@include file="/jsp/common/foot.jsp" %>
