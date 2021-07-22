@@ -73,13 +73,12 @@ public class BillServlet extends HttpServlet {
 
     private void modify(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("modify===============");
         String id = request.getParameter("id");
         String productName = request.getParameter("productName");
         String productDesc = request.getParameter("productDesc");
         String productUnit = request.getParameter("productUnit");
-        BigDecimal productCount = BigDecimal.valueOf(Integer.parseInt(request.getParameter("productCount")));
-        BigDecimal totalPrice = BigDecimal.valueOf(Integer.parseInt(request.getParameter("totalPrice")));
+        BigDecimal productCount = new BigDecimal(request.getParameter("productCount")).setScale(2, BigDecimal.ROUND_DOWN);
+        BigDecimal totalPrice = new BigDecimal(request.getParameter("totalPrice")).setScale(2, BigDecimal.ROUND_DOWN);
         String providerId = request.getParameter("providerId");
         String isPayment = request.getParameter("isPayment");
 
@@ -145,8 +144,8 @@ public class BillServlet extends HttpServlet {
         String billCode = req.getParameter("billCode");
         String productName = req.getParameter("productName");
         String productUnit = req.getParameter("productUnit");
-        BigDecimal productCount = BigDecimal.valueOf(Integer.parseInt(req.getParameter("productCount")));
-        BigDecimal totalPrice = BigDecimal.valueOf(Integer.parseInt(req.getParameter("totalPrice")));
+        BigDecimal productCount = new BigDecimal(req.getParameter("productCount")).setScale(2, BigDecimal.ROUND_DOWN);
+        BigDecimal totalPrice = new BigDecimal(req.getParameter("totalPrice")).setScale(2, BigDecimal.ROUND_DOWN);
         Integer providerId = Integer.parseInt(req.getParameter("providerId"));
         Integer isPayment = Integer.parseInt(req.getParameter("isPayment"));
         String productDesc = req.getParameter("productDesc");
