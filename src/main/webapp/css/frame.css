@@ -1,0 +1,55 @@
+:root{
+    --blue:#C0DEEC;
+    --deepBlue:#8EC0DA;
+    --darkBlue:#628496;
+    --white: #FFF3F8;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#rc-img {
+    background-color: #000000;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%,0);
+    width: 550px;
+    height: 400px;
+    overflow: hidden;
+    background: url("../images/R-C.png") 0 center no-repeat;
+    background-size: cover;
+}
+#welcome {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-weight: bold;
+    font-size: 40px;
+    color: var(--white);
+    border: 5px solid var(--white);
+    padding: 10px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px 2px var(--darkBlue);
+    text-align: center;
+    transition: all .5s ease-in-out;
+    font-family: STHupo;
+}
+#welcome:hover {
+    font-size: 60px;
+}
+#img {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%,0);
+    width: 550px;
+    height: 400px;
+    overflow: hidden;
+}
+#img img {
+    width: 100%;
+    height: 100%;
+}

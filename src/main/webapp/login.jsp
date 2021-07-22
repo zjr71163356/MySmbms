@@ -10,111 +10,7 @@
               top.location=self.location;
          } */
     </script>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/css/public.css" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            background: #7698AD;
-        }
-        .loginHeader {
-            position: absolute;
-            left: 50%;
-            top: 5%;
-            transform: translate(-50%,0);
-            text-align: center;
-            height: 100px;
-            line-height: 100px;
-            width: 400px;
-            border-bottom: 3px solid #FFFFFF;
-            font-size: 30px;
-            color: #FFFFFF;
-            font-weight: bold;
-        }
-        #login-right {
-            position: absolute;
-            top: 30%;
-            left: 58%;
-            width: 400px;
-            height: 370px;
-            border: 5px solid #FFFFFF;
-            font-size: 30px;
-            color: #FFFFFF;
-            font-weight: bold;
-            transition: all .5s ease;
-        }
-        .login-info{
-            height: 50px;
-            width: 100%;
-            line-height: 50px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 25px;
-            color: #DD7777;
-        }
-        #login-right:hover{
-            box-shadow: 2px 2px 2px 2px #536B79;
-            border-radius: 15px;
-        }
-        #login-input {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        .input-common {
-            width: 90%;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%,0);
-        }
-        #inputbox-one {
-            top: 15%;
-        }
-        #inputbox-two {
-            top: 30%;
-        }
-        .input-common input {
-            width: 70%;
-            height: 30px;
-            background-color: #7698AD;
-            border: none;
-            border-bottom: 3px solid #FFFFFF;
-            padding: 0;
-            outline: none;
-            font-size: 25px;
-            font-weight: bold;
-            -webkit-box-shadow: 0 0 0 1000px #7698AD inset;
-            color: #ffffff;
-        }
-        .subBtn {
-            display: flex;
-            justify-content: space-around;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%,0);
-            top: 62%;
-            width: 80%;
-            height: 50px;
-        }
-        .subBtn input {
-            width: 120px;
-            height: 40px;
-            background-color: rgba(0,0,0,0);
-            border: 3px solid #ffffff;
-            border-radius: 10px;
-            transition: all .5s ease;
-            color: #FFFFFF;
-        }
-        .subBtn input:hover{
-            box-shadow: 0 2px 2px 2px #536B79;
-            font-size: 20px;
-        }
-    </style>
+    <link type="text/css" rel="stylesheet" href="css/login.css" />
 </head>
 <body class="login_bg">
 <section class="loginBox">
@@ -126,6 +22,9 @@
             <div id="login-left"></div>
             <div id="login-right">
                 <div class="login-info">${error}</div>
+                <div id="login-text" class="login-info" >
+                    登录
+                </div>
                 <div id="login-input">
                     <div class="input-common" id="inputbox-one">
                         <label for="userCode">用户名:</label>
@@ -146,4 +45,5 @@
 </section>
 </body>
 </html>
+
 

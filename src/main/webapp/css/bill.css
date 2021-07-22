@@ -1,0 +1,76 @@
+:root{
+    --blue: #C0DEEC;
+    --deepBlue: #8EC0DA;
+    --darkBlue: #0b0f12;
+    --dark: #374c5b;
+    --white: #FFF3F8;
+}
+
+/* 商品列表 */
+#billAdd-box {
+    border: 2px solid var(--deepBlue);
+    border-radius: 8px;
+    position: relative;
+    height: 75%;
+    width: 30%;
+    transition: all .5s ease;
+}
+#billAdd-box:hover {
+    box-shadow: 2px 2px 2px 2px #536B79;
+}
+#billAdd-box .bill-common {
+    position: absolute;
+    width: 75%;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+#billAdd-box #list-1 {
+    top: 10%;
+}#billAdd-box #list-2 {
+     top: 20%;
+ }#billAdd-box #list-3 {
+      top: 30%;
+  }#billAdd-box #list-4 {
+       top: 40%;
+   }#billAdd-box #list-5 {
+        top: 50%;
+    }#billAdd-box #list-6 {
+         top: 60%;
+     }#billAdd-box #list-7 {
+          top: 70%;
+          color: #FFF3F8;
+          font-size: 15px;
+      }
+#list-7 input {
+    width: 20px;
+    height: 20px;
+}
+#list-8 {
+    display: flex;
+    width: 60% !important;
+    justify-content: space-between;
+}
+#list-8 input {
+    width: 100px !important;
+    height: 40px !important;
+}
+#billAdd-box label {
+    font-size: 20px;
+    color: #FFF3F8;
+    font-weight: bold;
+}
+#billAdd-box input {
+    height: 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border: 2px solid #FFF3F8;
+    background-color: rgba(0,0,0,0);
+}
+
+
+
+/* 商品列表结束 */
+
+

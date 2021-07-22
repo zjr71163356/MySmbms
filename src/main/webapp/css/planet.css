@@ -1,0 +1,87 @@
+.container {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	padding: 20px;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* 背景渐变色 旋转150度进行着色 transparent是透明色 */
+	background-image: linear-gradient(150deg,
+			#55aaff,
+			transparent,
+			transparent);
+	/* 动画  名称 时长  第三个属性值是贝塞尔曲线,infinite是无限次播放 */
+	animation: move 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.container::before,
+.container::after {
+	content: "";
+	/* 相对定位 */
+	top: -185px;
+	left: 65px;
+	position: relative;
+	/*设置宽和高 */
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.container::before {
+	width: 35px;
+	top: 40px;
+	left: 30px;
+	/* 逆时针旋转40度 */
+	transform: rotate(-40deg);
+}
+
+/* 行星 */
+.container .planet {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-image: linear-gradient(150deg, #a37dce, #4891d9, transparent);
+
+}
+
+/* 行星 */
+/* 环绕的轨道 start */
+.container .planet::before,
+.container .planet::after {
+	content: "";
+	position: absolute;
+	top: 90px;
+	left: -40px;
+	width: 300px;
+	height: 40px;
+	border-radius: 50%;
+	border: 10px solid #FFFFFF;
+	/* 先让两个伪元素的上边框颜色都为透明色 */
+	border-top-color: transparent;
+	/* 逆时针旋转20度 */
+	transform: rotate(-20deg);
+}
+
+.container .planet::after {
+	border-top-color: #FFFFFF;
+	z-index: -99;
+}
+
+/* 漂浮 */
+@keyframes move {
+	0% {
+		top: 50%;
+	}
+
+	50% {
+		top: 45%;
+	}
+
+	100% {
+		top: 50%;
+	}
+}
