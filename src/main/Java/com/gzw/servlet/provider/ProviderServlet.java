@@ -26,6 +26,11 @@ public class ProviderServlet extends HttpServlet {
             this.add(req,resp);
         else if("delprovider".equals(method))
             this.delete(req,resp);
+        else if("modifysave".equals(method))
+            this.modify(req,resp);
+    }
+
+    private void modify(HttpServletRequest req, HttpServletResponse resp) {
 
     }
 
