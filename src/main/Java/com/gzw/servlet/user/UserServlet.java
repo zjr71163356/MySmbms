@@ -259,7 +259,7 @@ public class UserServlet extends HttpServlet {
         if (queryNameInfo == null){
             queryNameInfo = "";
         }
-        if (queryUserRoleInfo != null && queryUserRoleInfo.equals("")){
+        if (queryUserRoleInfo != null){
             queryUserRole = Integer.parseInt(queryUserRoleInfo);
         }
         if (pageIndexInfo!=null){
@@ -296,6 +296,7 @@ public class UserServlet extends HttpServlet {
         req.setAttribute("queryUserName",queryNameInfo);
         req.setAttribute("queryUserRole",queryUserRoleInfo);
 
+        System.out.println();
 
         // 返回前端页面
         req.getRequestDispatcher("userlist.jsp").forward(req,resp);
