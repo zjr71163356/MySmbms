@@ -1,0 +1,144 @@
+/* 用户列表 */
+.right .search {
+    background-color: var(--deepBlue);
+    border-bottom: 2px solid #FFF3F8;
+}
+.search-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF3F8;
+}
+.right .search #searchbutton{
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    font-size: 15px;
+    color: #FFF3F8;
+    font-weight: bold;
+    background-color: rgba(0,0,0,0);
+    border: 2px solid #FFF3F8;
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+.right .search #searchbutton:hover{
+    box-shadow: 1px 1px 1px 1px #536B79;
+    font-size: 18px;
+}
+.providerTable {
+    width: 100%;
+}
+.firstTr{
+    width: 100%;
+    height: 40px;
+    background-color: #536B79;
+}
+.firstTr th {
+    color: #FFF3F8;
+    font-size: 15px;
+    font-weight: bold;
+    border-left: 2px solid #FFF3F8;
+    border-bottom: 2px solid #FFF3F8;
+}
+.firstTr th:nth-child(1) {
+    border-left: none;
+}
+.search-form {
+    height: 40px;
+    background-color: var(--deepBlue);
+}
+.search-form td {
+    color: #FFF3F8;
+    font-size: 15px;
+    text-align: center;
+    border-left: 2px solid #FFF3F8;
+    border-bottom: 2px solid #FFF3F8;
+}
+.search-form td:nth-child(1){
+    border-left: none;
+}
+
+/* 用户列表结束 */
+
+/* 用户添加 */
+
+#userAdd-box {
+    border: 2px solid #FFF3F8;
+    border-radius: 8px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    width: 30%;
+    transition: all .5s ease;
+    overflow: hidden;
+}
+
+#userAdd-box:hover{
+    box-shadow: 2px 2px 2px 2px #536B79;
+}
+#userAdd-box .user-common {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 70%;
+    color: #FFF3F8;
+    font-weight: 700;
+    font-size: 15px;
+}
+#userAdd-box .user-common input{
+    outline: none;
+    border: 2px solid #FFF3F8;
+    box-shadow: 0 0 0 0 #FFFFFF;
+    height: 20px;
+    border-radius: 5px;
+    color: #FFF3F8;
+    background-color: rgba(0,0,0,0);
+}
+#userAdd-box #uList-1 {
+    top: 8%;
+}#userAdd-box #uList-2 {
+     top: 16%;
+ }#userAdd-box #uList-3 {
+      top: 24%;
+  }#userAdd-box #uList-4 {
+       top: 32%;
+   }#userAdd-box #uList-5 {
+        top: 40%;
+    }#userAdd-box #uList-6 {
+         top: 48%;
+     }#userAdd-box #uList-7 {
+          top: 56%;
+      }#userAdd-box #uList-8{
+           top: 64%;
+       }#userAdd-box #uList-9{
+            top: 72%;
+        }#userAdd-box #uList-10{
+             top: 83%;
+             display: flex;
+             height: 40px;
+             justify-content: space-around;
+         }
+#uList-5 select {
+    height: 25px;
+    width: 55px;
+    text-align: center;
+    color: #7698AD;
+    font-weight: bold;
+    outline: none;
+}
+#uList-9 select {
+    height: 25px;
+    width: 55px;
+    text-align: center;
+    color: #7698AD;
+    font-weight: bold;
+    outline: none;
+}
+#uList-10 input {
+    width: 120px;
+    height: 100% !important;
+    line-height: 40px;
+}
+
+/* 用户添加结束 */

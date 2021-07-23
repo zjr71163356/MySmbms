@@ -1,0 +1,58 @@
+.page-bar {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #536B79;
+    border-bottom: 2px solid #FFF3F8;
+}
+.page-bar ul li{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translate(0,-50%);
+    color: #FFF3F8;
+}
+.page-bar #ul-a {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.page-bar a{
+    font-size: 15px;
+    color: #FFF3F8;
+    padding-left: 10px;
+}
+.page-go-form{
+    position: absolute;
+    top: 50%;
+    left: 76%;
+    transform: translate(0,-50%);
+    color: #FFF3F8;
+    font-size: 15px;
+}
+.page-go-form input{
+    height: 20px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0);
+    border: 2px solid #FFF3F8;
+    color: #FFF3F8;
+    font-size: 20px;
+}
+.page-go-form button {
+    width: 80px;
+    height: 25px;
+    margin-left: 20px;
+    background-color: rgba(0,0,0,0);
+    border-radius: 5px;
+    border: 2px solid #FFF3F8;
+    color: #FFF3F8;
+    font-size: 15px;
+}
+.page-go-form button:hover{
+    font-size: 18px;
+}
+.page-go-form button:active{
+    background-color: #FFFFFF;
+}
