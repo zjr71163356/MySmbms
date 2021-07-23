@@ -133,4 +133,21 @@ public class Provider {
     }
 
 
+    @Override
+    public String toString() {
+        return "Provider{" +
+                "id=" + id +
+                ", proCode='" + proCode + '\'' +
+                ", proName='" + proName + '\'' +
+                ", proDesc='" + proDesc + '\'' +
+                ", proContact='" + proContact + '\'' +
+                ", proPhone='" + proPhone + '\'' +
+                ", proAddress='" + proAddress + '\'' +
+                ", proFax='" + proFax + '\'' +
+                ", createdBy=" + createdBy +
+                ", creationDate=" + creationDate +
+                ", modifyDate=" + modifyDate +
+                ", modifyBy=" + modifyBy +
+                '}';
+    }
 }
