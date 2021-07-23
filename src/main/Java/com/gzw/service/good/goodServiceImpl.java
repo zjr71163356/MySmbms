@@ -76,7 +76,7 @@ public class goodServiceImpl implements goodService{
         try{
             connection=BaseBao.getConnection();
 
-        }catch (Exception )
+        }catch (Exception  )
         return null;
     }
 }
