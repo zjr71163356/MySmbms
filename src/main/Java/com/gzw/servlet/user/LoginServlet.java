@@ -30,7 +30,9 @@ public class LoginServlet extends HttpServlet {
             req.getSession().setAttribute(Constants.USER_SESSION,user);
             req.getSession().setAttribute("userId",user.getId());
             // 跳转到网站内部
+            if(user.getUserRole()==1)
             resp.sendRedirect("jsp/frame.jsp");
+            else ;
         }else{
             // 没有则转发会登录页面并提示用户名或者密码错误
             req.setAttribute("error","用户名或者密码不正确");
