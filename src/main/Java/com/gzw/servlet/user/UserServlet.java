@@ -319,6 +319,8 @@ public class UserServlet extends HttpServlet {
                 req.setAttribute("message","修改密码成功！请退出，使用新密码登录");
                 // 密码修改成功，移除session
                 req.getSession().removeAttribute(Constants.USER_SESSION);
+                resp.sendRedirect(req.getContextPath()+"/login.jsp");
+                return;
             }else {
                 req.setAttribute("message","修改密码失败！");
             }
