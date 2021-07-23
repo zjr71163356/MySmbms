@@ -3,6 +3,9 @@ package com.gzw.pojo;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
+
+//Good是上架的商品，不是用户购物车里的
+
 public class Good {
     private Integer goodID;
     private String goodName;

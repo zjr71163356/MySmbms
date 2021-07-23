@@ -4,9 +4,11 @@ import com.gzw.dao.BaseBao;
 import com.gzw.dao.good.goodDao;
 import com.gzw.dao.good.goodDaoImpl;
 import com.gzw.pojo.Good;
+import com.gzw.pojo.GoodInCar;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -66,17 +68,36 @@ public class goodServiceImpl implements goodService{
     }
 
     @Override
-    public Good query(Integer goodID) {
-        return null;
-    }
-
-    @Override
-    public List<Object[]> getGoodList(Integer userID) {
+    public Good getGoodByID(Integer goodID) {
         Connection connection=null;
+        Good good=null;
         try{
             connection=BaseBao.getConnection();
+            good=goodDao.getGoodByID(connection,goodID);
 
-        }catch (Exception  )
-        return null;
+        }catch (Exception e ){
+            e.printStackTrace();
+        }finally{
+            BaseBao.closeResource(connection, null, null);
+        }
+        return good;
+    }
+
+
+    @Override
+    public List<GoodInCar> getGoodList(Integer userID) {
+        Connection connection=null;
+        List <GoodInCar> shoppingList=null;
+        try{
+            connection=BaseBao.getConnection();
+           shoppingList=goodDao.getGoodList(connection,userID);
+
+
+        }catch (Exception e ){
+            e.printStackTrace();
+        }finally{
+            BaseBao.closeResource(connection, null, null);
+        }
+        return shoppingList;
     }
 }
