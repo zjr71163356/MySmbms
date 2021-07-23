@@ -106,13 +106,13 @@ public class ProviderServlet extends HttpServlet {
 
     private void add(HttpServletRequest req, HttpServletResponse resp) throws  ServletException ,IOException{
         Object[] paras = req.getParameterValues("paras");
-        System.out.println(Arrays.toString(paras));
+//        System.out.println(Arrays.toString(paras));
 
         Provider provider = new Provider();
         provider.setProvider(paras,req,resp);
         ProviderServiceImpl providerService = new ProviderServiceImpl();
 
-        System.out.println(provider.toString());
+//        System.out.println(provider.toString());
         boolean flag=providerService.add(provider);
         if(flag==true) {
             req.setAttribute("message", "添加成功！");
